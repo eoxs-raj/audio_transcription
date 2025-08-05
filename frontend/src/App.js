@@ -28,7 +28,7 @@ function App() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await fetch('http://localhost:8000/transcribe/', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/transcribe/`, {
         method: 'POST',
         body: formData,
       });
